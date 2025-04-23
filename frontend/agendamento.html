@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="custom-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo/logo_dark.png" alt="Logo" style="width: 130px;">
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="agendamento.html" class="active">Agendamentos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <ul class="navbar-links navbar-right">
+        <li><a id="userName">Olá</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Section to display the list of appointments -->
+  <div class="form-container" style="max-width:100%;">
+    <div class="form-header">
+      <h1>Lista de Agendamentos</h1>
+      <a href="cadastro-agendamento.html" class="btn" style="background-color: rgb(23, 156, 23);">Novo +</a>
+    </div>
+    <div id="agendamentosList" class="dashboard-cards" style="display: grid;grid-template-columns: repeat(3, 1fr);gap: 25px;">
+      <!-- Example of dynamically loaded card -->
+      <div class="card">
+        <!-- Example card content -->
+        <p>Nome do Cliente: João</p>
+        <p>Data: 2025-05-01</p>
+        <p>Serviço: Banho e Tosa</p>
+        <button class="btn-excluir" style="background-color:#ff3c3c" data-id="1">
+          🗑️
+        </button>
+      </div>
+      <!-- Appointments will be dynamically loaded here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Amigos de Patas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/agendamento.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const userName = localStorage.getItem("userName");
+      if (userName) {
+        document.getElementById("userName").textContent = `Olá, ${userName}`;
+      }
+
+      document.getElementById("logout").addEventListener("click", () => {
+        localStorage.clear();
+        window.location.href = "login.html";
+      });
+    });
+  </script>
+</body>
+</html>

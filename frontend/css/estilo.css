@@ -1,0 +1,86 @@
+/* Estilo geral */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefaf6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Contêiner de login */
+.login-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  border: 2px solid #ffd9b0;
+}
+
+/* Logo */
+.login-container img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Título */
+.login-container h1 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: rgb(46, 46, 46);
+}
+
+/* Formulário */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ffe2c0;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff9f4;
+  transition: border-color 0.2s ease;
+}
+
+.login-container input:focus {
+  border-color: #ffb36b;
+  outline: none;
+}
+
+/* Botão */
+.login-container button {
+  background-color: #ff914d;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #ff7733;
+}
+
+/* Link de registro */
+.login-container a {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #ff914d;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}

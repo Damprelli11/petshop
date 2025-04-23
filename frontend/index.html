@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Amigos de Patas</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="custom-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo/logo_dark.png" alt="Logo" style="width: 130px;">
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="agendamento.html">Agendamentos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <ul class="navbar-links navbar-right">
+        <li><a id="userName">Olá</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Bem-vindo ao Dashboard</h1>
+      <p>Gerencie seus agendamentos e muito mais!</p>
+    </header>
+
+    <section class="dashboard-cards">
+      <div class="card">
+        <h2>Agendamentos</h2>
+        <p>Gerencie os agendamentos dos seus clientes.</p>
+        <a href="agendamento.html" class="btn">Ver Agendamentos</a>
+      </div>
+      <div class="card">
+        <h2>Cadastro</h2>
+        <p>Cadastre novos clientes e colaboradores.</p>
+        <a href="cadastro.html" class="btn">Cadastrar</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Amigos de Patas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const userName = localStorage.getItem("userName");
+      if (userName) {
+        document.getElementById("userName").textContent = `Olá, ${userName}`;
+      }
+
+      document.getElementById("logout").addEventListener("click", () => {
+        localStorage.clear();
+        window.location.href = "login.html";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+/* Reset and general styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  background-image: url('../images/paw-pattern.png'); /* Add a paw print pattern */
+  background-size: 150px;
+  background-repeat: repeat;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: url('../images/dog-canvas.png'); /* Add a subtle dog canvas */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: url('../images/cat-canvas.png'); /* Add a subtle cat canvas */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar styles */
+.custom-navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #ff914d; /* Add a playful border */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff914d;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  background-color: #ff914d;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
+}
+
+/* Dashboard header */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ff914d, #ff7733);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.dashboard-header h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.dashboard-header::after {
+  content: "🐾";
+  font-size: 50px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  opacity: 0.2;
+}
+
+/* Dashboard cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Divide em 3 colunas fixas */
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr); /* Ajusta para 2 colunas em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr; /* Ajusta para 1 coluna em telas muito pequenas */
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #ff914d;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card::before {
+  content: "🐾";
+  font-size: 40px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  color: #ff914d;
+  opacity: 0.1;
+}
+
+.card h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff914d;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.card .btn:hover {
+  background-color: #ff7733;
+  transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #333;
+  color: #fff;
+  margin-top: auto; /* Empurra o footer para o fim */
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+footer::before {
+  content: "🐾";
+  font-size: 30px;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  opacity: 0.2;
+}
+
+/* Form container */
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff914d;
+  position: relative;
+}
+
+.form-container::before {
+  content: "🐾";
+  font-size: 50px;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  color: #ff914d;
+  opacity: 0.1;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Uniform input sizes */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: calc(100% - 24px); /* Adjust width to fit within the container padding */
+  max-width: 100%; /* Prevent overflow */
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ff914d;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: #ff7733;
+  outline: none;
+}
+
+.form-container button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff914d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-container button:hover {
+  background-color: #ff7733;
+  transform: scale(1.05);
+}
+
+.form-container .btn-secondary {
+  background-color: #ccc;
+  color: #333;
+  margin-right: 10px;
+}
+
+.form-container .btn-secondary:hover {
+  background-color: #bbb;
+}
+
+/* Add subtle paw print background */
+.form-container::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/paw-pattern.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+}
+
+/* Form header styles */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-header h1 {
+  margin: 0;
+}
+
+.form-header .btn {
+  padding: 10px 20px;
+  background-color: #ff914d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-header .btn:hover {
+  background-color: #ff7733;
+  transform: scale(1.05);
+}
+
+/* Finalize and Cancel buttons */
+.btn-finalizar {
+  background-color: #28a745; /* Verde */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.btn-finalizar:hover {
+  background-color: #218838; /* Verde mais escuro */
+}
+
+.btn-cancelar {
+  background-color: #6c757d; /* Cinza */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background-color: #5a6268; /* Cinza mais escuro */
+}
