@@ -1,56 +1,88 @@
-Projeto Node.js com Banco de Dados
-Este projeto é composto por um backend em Node.js conectado a um banco de dados e um frontend simples. Siga as instruções abaixo para rodar a aplicação em sua máquina local.
+<h1>🐾 Projeto Node.js com Banco de Dados - Petshop</h1>
 
-## 🚀 Pré-requisitos
-Node.js
+<p>
+  Este projeto é composto por um <b>backend em Node.js</b> conectado a um <b>banco de dados MySQL</b> 
+  e um <b>frontend simples</b>.  
+  Siga as instruções abaixo para rodar a aplicação em sua máquina local.
+</p>
 
-MySQL ou outro SGBD compatível
+<hr>
 
-Git
+<h2>🚀 Pré-requisitos</h2>
+<ul>
+  <li><a href="https://nodejs.org/">Node.js</a></li>
+  <li><a href="https://www.mysql.com/">MySQL</a> (ou outro SGBD compatível)</li>
+  <li><a href="https://git-scm.com/">Git</a></li>
+  <li>Extensão <b>Live Server</b> instalada no editor (ex.: VS Code)</li>
+</ul>
 
-Extensão Live Server instalada no seu editor (como o VS Code)
+<hr>
 
-## 📦 Instalação
-1. Clone o repositório:
+<h2>📦 Instalação</h2>
+<ol>
+  <li>Clone o repositório:</li>
+</ol>
 
-git clone https://github.com/Damprelli11/petshop.git
+<pre><code>git clone https://github.com/Damprelli11/petshop.git
+</code></pre>
 
-## 🗄️ Banco de Dados
-Inicie o MySQL no seu computador.
+<hr>
 
-Crie o banco de dados usando o arquivo db.sql:
+<h2>🗄️ Banco de Dados</h2>
+<ol>
+  <li>Inicie o <b>MySQL</b> no seu computador.</li>
+  <li>Crie o banco de dados usando o arquivo <code>banco_petshop.sql</code>:</li>
+</ol>
 
-No terminal, execute o comando abaixo (ajustando seu_usuario):
+<pre><code>mysql -u seu_usuario -p &lt; banco_petshop.sql
+</code></pre>
 
-mysql -u seu_usuario -p < banco_petshop.sql
+<hr>
 
-## 🔧 Configuração do Backend
-Acesse a pasta do backend:
+<h2>🔧 Configuração do Backend</h2>
+<ol>
+  <li>Acesse a pasta do backend:</li>
+</ol>
 
-cd backend
+<pre><code>cd backend
+</code></pre>
 
-Configure as variáveis de ambiente:
+<ol start="2">
+  <li>Configure as variáveis de ambiente no arquivo <b>.env</b>:</li>
+</ol>
 
-No arquivo .env, edite os campos DB_USER e DB_PASSWORD com os dados da sua instalação do MySQL:
-
-DB_HOST=localhost
+<pre><code>DB_HOST=localhost
 DB_USER=seu_usuario
 DB_PASSWORD=sua_senha
 DB_NAME=banco_petshop
+</code></pre>
 
-Inicie o servidor backend:
+<ol start="3">
+  <li>Instale as dependências e inicie o servidor:</li>
+</ol>
 
-npm install
+<pre><code>npm install
 npm start
+</code></pre>
 
-Isso executará o arquivo server.js e iniciará o servidor backend.
+<p>O backend rodará através do arquivo <code>server.js</code>.</p>
 
-## 🌐 Rodando o Frontend
-Acesse a pasta do frontend (caso esteja separado, por exemplo em frontend/).
+<hr>
 
-Clique com o botão direito no arquivo login.html e selecione "Open with Live Server".
+<h2>🌐 Rodando o Frontend</h2>
+<ol>
+  <li>Acesse a pasta do frontend (ex.: <code>frontend/</code>).</li>
+  <li>Clique com o botão direito no arquivo <code>login.html</code> e selecione <b>"Open with Live Server"</b>.</li>
+  <li>Certifique-se de ter a extensão <b>Live Server</b> instalada no VS Code.</li>
+</ol>
 
-Certifique-se de ter a extensão Live Server instalada no VS Code.
+<hr>
 
-## ✅ Pronto!
-Agora sua aplicação deve estar funcionando com o backend ativo e o frontend servindo a interface no navegador.
+<h2>✅ Pronto!</h2>
+<p>
+  Agora sua aplicação deve estar funcionando:  
+  <ul>
+    <li><b>Backend</b> ativo em Node.js conectado ao MySQL</li>
+    <li><b>Frontend</b> servindo a interface no navegador</li>
+  </ul>
+</p>
