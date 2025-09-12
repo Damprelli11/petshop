@@ -13,7 +13,7 @@
   <li><a href="https://nodejs.org/">Node.js</a></li>
   <li><a href="https://www.mysql.com/">MySQL</a> (ou outro SGBD compatível)</li>
   <li><a href="https://git-scm.com/">Git</a></li>
-  <li>Extensão <b>Live Server</b> instalada no editor (ex.: VS Code)</li>
+  <li>Extensão <b>Live Server</b></li>
 </ul>
 
 <hr>
